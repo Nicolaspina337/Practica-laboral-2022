@@ -1,7 +1,8 @@
+// servidor backend de nodo
 const http = require('http');
 const badyParser = require('body-parser');
 const express = require('express');
-const userApi = require('./api/userApi');
+const registro_usuarioApi = require('./api/registro_usuarioApi');
 const DBHelper = require('./utils/DBHelper');
 
 let conn = new DBHelper().getConn();
@@ -15,7 +16,7 @@ app.use(badyParser.urlencoded({
 }));
 
 // enrutamiento api back-end
-app.use('/api/user', userApi);
+app.use('/api/registro_usuario', registro_usuarioApi);
 
 
 // empieza a escuchar
