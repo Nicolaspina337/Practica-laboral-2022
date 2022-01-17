@@ -10,23 +10,37 @@
       <li class="nav-item active text-blue-800">
         <a class="nav-link" href="#">
         <router-link to="/Menu">
-          Menu
+          🏠 Menu
         </router-link>
         <span class="sr-only">(current)</span>
         </a>
       </li>
       <li class="nav-item dropdown text-blue-800">
         <a class="nav-link" href="#">
-        <router-link to="/productos">
-          Nuestros productos
+        <router-link to="/nino">
+          👕 Niño
         </router-link>
         <span class="sr-only">(current)</span>
         </a>
       </li>
        <li class="nav-item text-blue-800">
         <a class="nav-link" href="#">
+          <router-link to="/nina">
+            👗 Niña
+          </router-link>
+        </a>
+      </li>
+      <li class="nav-item text-blue-800">
+        <a class="nav-link" href="#">
           <router-link to="/login">
-            Iniciar sesion
+            📋 Mi cuenta
+          </router-link>
+        </a>
+      </li>
+      <li class="nav-item text-blue-800">
+        <a class="nav-link" href="#">
+          <router-link to="/login">
+            🛒 Carrito
           </router-link>
         </a>
       </li>
@@ -45,6 +59,7 @@
           Buscar
         </button>
       </form>
+      
       </div>
     </div>
   </nav>
