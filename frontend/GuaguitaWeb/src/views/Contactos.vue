@@ -4,13 +4,13 @@
         <form action class="form">
           <h1 class="title">Contactanos</h1>
           <label class="form-label" for="#text">Ingresa tu nombre:</label>
-          <input class="form-input" type="text" id="email" required placeholder="Nombre:" v-model="nombre">
+          <input class="form-input" type="text" id="nombre" required placeholder="Nombre:" v-model="nombres">
           <label class="form-label" for="#email">Email:</label>
-          <input class="form-input" type="email" id="email" required placeholder="Email" v-model="correo">
+          <input class="form-input" type="email" id="Email" required placeholder="Email" v-model="correos">
           <label class="form-label" for="exampleFormControlTextarea1">Motivo de contacto:</label>
           <textarea class="form-input" name="w3review" rows="4" cols="50" placeholder="Escribe tu mensaje, duda, reclamo, etc.." v-model="descripcion">
           </textarea>
-          <input class="form-submit" type="submit" value="Ingresar" @click="ingresar()">
+          <input class="form-submit" type="submit" value="Ingresar" @click="publicar()">
         </form>
       </div>        
 </div>
@@ -21,8 +21,8 @@ import axios from "axios";
 export default {
   data() {
     return {
-      nombre: "",
-      correo: "",
+      nombres: "",
+      correos: "",
       descripcion: ""
     };
   },
@@ -33,13 +33,13 @@ export default {
 
   },
   methods: {
-    Ingresar() {
+    publicar() {
       if (this.esValido()) {
         axios
           .post("/api/contactos/add", {
-            nombre: this.nombre,
-            correo: this.correo,
-            descripcion: this.descripcion,
+            nombres: this.nombres,
+            correos: this.correos,
+            descripcion: this.descripcion
           })
           .then(respuesta => {
             alert("Solicitud registrada");
@@ -51,23 +51,23 @@ export default {
         console.log("Su solicitud no se pudo enviar");
       }
     },
-    esValido() {
-      if (this.nombre.trim().length <= 0) {
+      esValido() {
+      if (this.nombres.trim().length <= 0) {
         alert("Debe ingresar su nombre");
         return false;
       }
       return true;
     },
         esValido() {
-      if (this.correo.trim().length <= 0) {
-        alert("Debe ingresar su correo");
+      if (this.correos.trim().length <= 0) {
+        alert("Debe ingresar un correo");
         return false;
       }
       return true;
     },
         esValido() {
       if (this.descripcion.trim().length <= 0) {
-        alert("Debe ingresar el motivo de su solicitud");
+        alert("Debe ingresar una descripcion");
         return false;
       }
       return true;

@@ -9,7 +9,7 @@ router.post('/add', (req, res) => {
     let sqlStr = sql.contactos.add;
     let params = req.body;
     let conn = new DBHelper().getConn();
-    conn.query(sqlStr, [params.nombre, params.correo, params.descripcion], (err, result) => {
+    conn.query(sqlStr, [params.nombres, params.correos, params.descripcion], (err, result) => {
         if (err) {
             res.json(err);
         } else {
