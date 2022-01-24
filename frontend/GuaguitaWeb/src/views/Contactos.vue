@@ -1,104 +1,141 @@
 <template>
 <div class="body">
-<form class="form">
-  <h2>CONTACT US</h2>
-  <p type="Name:"><input placeholder="Write your name here.."></input></p>
-  <p type="Email:"><input placeholder="Let us know how to contact you back.."></input></p>
-  <p type="Message:"><input placeholder="What would you like to tell us.."></input></p>
-  <button>Send Message</button>
-  <div>
-    <span class="fa fa-phone"></span>001 1023 567
-    <span class="fa fa-envelope-o"></span> contact@company.com
-  </div>
-</form>
+      <div class="login">
+        <form action class="form">
+          <h1 class="title">Contactanos</h1>
+          <label class="form-label" for="#text">Ingresa tu nombre:</label>
+          <input class="form-input" type="text" id="email" required placeholder="Nombre:" v-model="nombre">
+          <label class="form-label" for="#email">Email:</label>
+          <input class="form-input" type="email" id="email" required placeholder="Email" v-model="correo">
+          <label class="form-label" for="exampleFormControlTextarea1">Motivo de contacto:</label>
+          <textarea class="form-input" name="w3review" rows="4" cols="50" placeholder="Escribe tu mensaje, duda, reclamo, etc.." v-model="descripcion">
+          </textarea>
+          <input class="form-submit" type="submit" value="Ingresar" @click="ingresar()">
+        </form>
+      </div>        
 </div>
 </template>
 
-<scripts>
-</scripts>
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      nombre: "",
+      correo: "",
+      descripcion: ""
+    };
+  },
+  mounted() {
+    console.log("montado");
+  },
+  computed: {
+
+  },
+  methods: {
+    Ingresar() {
+      if (this.esValido()) {
+        axios
+          .post("/api/contactos/add", {
+            nombre: this.nombre,
+            correo: this.correo,
+            descripcion: this.descripcion,
+          })
+          .then(respuesta => {
+            alert("Solicitud registrada");
+          })
+          .catch((error) => {
+            alert(error);
+          });
+      } else {
+        console.log("Su solicitud no se pudo enviar");
+      }
+    },
+    esValido() {
+      if (this.nombre.trim().length <= 0) {
+        alert("Debe ingresar su nombre");
+        return false;
+      }
+      return true;
+    },
+        esValido() {
+      if (this.correo.trim().length <= 0) {
+        alert("Debe ingresar su correo");
+        return false;
+      }
+      return true;
+    },
+        esValido() {
+      if (this.descripcion.trim().length <= 0) {
+        alert("Debe ingresar el motivo de su solicitud");
+        return false;
+      }
+      return true;
+    },
+  },
+};
+</script>
 
 <style scoped>
-body{
-background:#59ABE3;
-margin:0
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Montserrat:ital,wght@0,400;1,700&display=swap');
+.login {
+  padding-top: 1rem;
+}
+.title {
+  text-align: center;
+}
+h1{
+  font-family: 'Jua', sans-serif;
+  font-size: 28px;
+}
+.form {
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  min-width: 350px;
+  max-width: 100%;
+  background-color: #9ad8d3;
+  border-radius: 5px;
+  padding: 40px;
+  box-shadow: 0 4px 10px 4px rgba(0, 0, 0, 0.3);
+}
+.form-label {
+  margin-top: 2rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  &:first-of-type {
+    margin-top: 0rem;
+  text-align:;
+  }
+}
+.form-input {
+  padding: 10px 15px;
+  background: #72cbc4;
+  background-image: none;
+  border: 1px solid white;
+  color: white;
+  &:focus {
+    outline: 0;
+  border-color: #1ab188;
+  }
 }
 
-.form{width:340px;
-height:440px;
-background:#e6e6e6;
-border-radius:8px;
-box-shadow:0 0 40px -10px #000;
-max-width:calc(100vw - 40px);
-box-sizing:border-box;
-font-family:'Montserrat',
-sans-serif;0
-display:block;
-margin:auto;
-}
-
-h2{
-margin:10px 0;
-padding-bottom:10px;
-width:180px;
-color:#78788c;
-border-bottom:3px solid #78788c
+.form-submit {
+  background: #1ab188;
+  border: none;
+  color: white;
+  margin-top: 3rem;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  &:hover {
+    background: #0b9185;
+  }
 }
 
 input{
-width:100%;
-padding:10px;
-box-sizing:border-box;
-background:none;
-outline:none;
-resize:none;
-border:0;
-font-family:'Montserrat',sans-serif;
-transition:all .3s;
-border-bottom:2px solid #bebed2
-}
-
-
-input:focus{
-border-bottom:2px solid #78788c
-}
-
-p:before{
-content:attr(type);
-display:block;
-margin:28px 0 0;
-font-size:14px;
-color:#5a5a5a
-}
-
-button{
-float:right;
-padding:8px 12px;
-margin:8px 0 0;
-font-family:'Montserrat',sans-serif;
-border:2px solid #78788c;
-background:0;
-color:#5a5a6e;
-cursor:pointer;
-transition:all .3s;
-}
-
-button:hover{
-background:#78788c;
-color:#fff
-}
-
-div{content:'Hi';
-bottom:-15px;right:-20px;
-background:#50505a;
-color:#fff;
-width:320px;
-padding:16px 4px 16px 0;
-border-radius:6px;
-font-size:13px;
-box-shadow:10px 10px 40px -14px #000;
-}
-
-span{
-margin:0 5px 0 15px
+  border-radius: 10px;
 }
 </style>

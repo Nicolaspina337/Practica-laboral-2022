@@ -39,10 +39,15 @@
       </li>
       <li class="nav-item text-blue-800">
         <a class="nav-link" href="#">
-          <router-link to="/login">
+          <router-link to="#">
             🛒 Carrito
           </router-link>
         </a>
+      </li>
+       <li class="nav-item text-blue-800">
+          <a class="nav-link disabled" href="#">
+          <p>ESTA ES UNA PAGINA DE PRUEBA!!!</p>
+          </a>
       </li>
     </ul>
        <form class="d-flex input-group w-auto">
