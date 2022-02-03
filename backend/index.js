@@ -3,6 +3,7 @@ const http = require('http');
 const bodyParser = require('body-parser');
 const express = require('express');
 const contactosApi = require('./api/contactosApi');
+const registroApi = require('./api/registroApi');
 const DBHelper = require('./utils/DBHelper');
 
 let conn = new DBHelper().getConn();
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 // enrutamiento api back-end
 app.use('/api/contactos', contactosApi);
+app.use('/api/registro', registroApi);
 
 
 // empieza a escuchar

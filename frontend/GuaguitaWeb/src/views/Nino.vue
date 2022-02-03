@@ -9,38 +9,38 @@
 <div class="row2"> 
   <div class="column">
     <img src="../ropa_nino/Conjunto_camuflaje.jpg" style="width:100%">
-    <p>Conjunto camuflaje🎖️<br> $12.990</p>
+    <p><router-link to="/camuflaje" style="color: black;">Conjunto camuflaje🎖️</router-link><br> $12.990</p>
     <img src="../ropa_nino/Enterito_rayas.jpg" style="width:100%">
-    <p>Enterito leoncito🦁<br>$11.990</p>
+    <p><router-link to="/camuflaje" style="color: black;">Enterito leoncito🦁</router-link><br>$11.990</p>
     <img src="../ropa_nino/Enterito osito.jpg" style="width:100%">
-    <p>Enterito osito ⚫<br>$14.990</p>
+    <p><router-link to="/camuflaje" style="color: black;">Enterito osito ⚫</router-link><br>$14.990</p>
   </div>
   
   <div class="column">
     <img src="../ropa_nino/Conjunto_nubes.jpg" style="width:100%">
-    <p>Conjunto nubes ☁️ <br> $12.990</p>
+    <p><router-link to="/nube" style="color: black;">Conjunto nubes ☁️ </router-link><br> $12.990</p>
     <img src="../ropa_nino/Enterito_lunar.jpg" style="width:100%">
-    <p>Enterito lunar🌛<br>$9.990</p>
+    <p><router-link to="/camuflaje" style="color: black;">Enterito lunar🌛</router-link><br>$9.990</p>
     <img src="../ropa_nino/Jardinera estrellas.jpg" style="width:100%">
-    <p>Jardinera estrellas ✨ <br>$11.990</p>
+    <p><router-link to="/camuflaje" style="color: black;">Jardinera estrellas ✨</router-link><br>$11.990</p>
   </div> 
    
   <div class="column">
     <img src="../ropa_nino/Elefante_estampado.jpg" style="width:100%">
-    <p>Enterito elefante 🐘 <br> $9.990</p>
+    <p><router-link to="/camuflaje" style="color: black;">Enterito elefante 🐘 </router-link><br> $9.990</p>
     <img src="../ropa_nino/Jardinera soldaditos.jpg" style="width:100%">
-    <p>Jardinera soldaditos 💂<br>$11.990</p>
+    <p><router-link to="/camuflaje" style="color: black;">Jardinera soldaditos 💂</router-link><br>$11.990</p>
     <img src="../ropa_nino/Enterito bigotes.jpg" style="width:100%">
-    <p>Enterito bigotes  👨 <br>$10.990</p>
+    <p><router-link to="/camuflaje" style="color: black;">Enterito bigotes  👨</router-link><br>$10.990</p>
   </div>
   
   <div class="column">
     <img src="../ropa_nino/Enterito_zorrito.jpg" style="width:100%">
-    <p>Enterito zorrito 🦊 <br> $11.990</p>
+    <p><router-link to="/camuflaje" style="color: black;">Enterito zorrito 🦊</router-link><br> $11.990</p>
     <img src="../ropa_nino/Jardinera te amo mami.jpg" style="width:100%">
-    <p>Jardinera te amo mami ❤️<br>$11.990</p>
+    <p><router-link to="/camuflaje" style="color: black;">Jardinera te amo mami ❤️</router-link><br>$11.990</p>
     <img src="../ropa_nino/Jardinera leoncito.jpg" style="width:100%">
-    <p>Jardinera leoncito  🦁<br> $11.990</p>
+    <p><router-link to="/camuflaje" style="color: black;">Jardinera leoncito  🦁</router-link><br> $11.990</p>
     <br>
   </div>
 </div>

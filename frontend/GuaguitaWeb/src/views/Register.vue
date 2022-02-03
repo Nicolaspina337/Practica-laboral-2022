@@ -2,20 +2,14 @@
 <div class="body">
       <div class="login">
         <form action class="form">
-          <h1 class="title">Inicio de sesion</h1>
-          <label class="form-label" for="#email">Email:</label>
+          <h1 class="title">Registro de usuario</h1>
+          <label class="form-label" for="#email">Ingresa tu Email:</label>
           <input class="form-input" type="email" id="email" required placeholder="Email" v-model="email">
           <label class="form-label" for="#password">Contraseña</label>
-          <input class="form-input" type="password" id="password" placeholder="Contraseña" v-model="contrasenia">
-          <input class="form-submit" type="submit" value="Ingresar" @click="login()">
-          <p v-if="error" class="error">Has introducido mal el email o la contraseña.</p>
-          
-          <label class="secciones">
-            <router-link to="/register">
-              Registrate
-            </router-link>
-          </label>
-          
+          <input class="form-input" type="password" id="password" placeholder="Contraseña" v-model="password">
+          <label class="form-label" for="#repeat-password">Repite la Contraseña</label>
+          <input class="form-input" type="password" id="repeat-password" placeholder="repite tu Contraseña" v-model="passwordRepeat">
+          <input class="form-submit" type="submit" value="Ingresar" @click="register()">
         </form>
       </div>        
 </div>
@@ -26,21 +20,16 @@ import auth from "@/logic/auth";
 export default {
   data: () => ({
     email: "",
-    contrasenia: "",
-    error: false
+    password: "",
+    passwordRepeat: ""
   }),
-   methods: {
-    async login() {
+ methods: {
+    async register() {
       try {
-        await auth.login(this.email, this.contrasenia);
-        const user = {
-          email: this.email
-        };
-        auth.setUserLogged(user);
-        this.$router.push("/menuser");
+        await auth.register(this.email, this.password);
+        this.$router.push("/login")
       } catch (error) {
         console.log(error);
-        this.error = true;
       }
     }
   }
@@ -79,17 +68,6 @@ h1{
   &:first-of-type {
     margin-top: 0rem;
   }
-}
-.secciones{
-  margin-top: 2rem;
-  color: black;
-  margin-bottom: 0.5rem;
-  font-family: 'Jua', sans-serif;
-  font-size: 23px;
-  &:first-of-type {
-  margin-top: 0rem;
-  }
-  
 }
 .form-input {
   padding: 10px 15px;

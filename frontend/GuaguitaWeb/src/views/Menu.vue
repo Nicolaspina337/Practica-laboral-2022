@@ -1,6 +1,8 @@
 <template>
 <div class="body">
 
+ <p v-if="userLogged">User loggued: {{userLogged}}</p>
+
   <div class="p-2 text-center h-200" id="header">
     <img src="../assets/logo_guaguita.png" width="700px" style="display:block; margin:auto;">
     <img src="../assets/h1_logo_G.png" width="500px" style="display:block; margin:auto;">
@@ -76,7 +78,6 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
   data () {
     return {
       

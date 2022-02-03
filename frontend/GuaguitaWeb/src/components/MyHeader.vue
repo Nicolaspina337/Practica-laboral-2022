@@ -39,7 +39,7 @@
       </li>
       <li class="nav-item text-blue-800">
         <a class="nav-link" href="#">
-          <router-link to="#">
+          <router-link to="/carrito">
             🛒 Carrito
           </router-link>
         </a>
@@ -71,14 +71,7 @@
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      
-    }
-  }
-}
+
 </script>
 
 <style scoped>

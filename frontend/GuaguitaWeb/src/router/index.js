@@ -1,12 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Menu from '@/views/menu'
+
 import Nino from '@/views/nino'
+import Camuflaje from '@/views/camuflaje'
+import Nube from '@/views/nube'
+
+
 import Nina from '@/views/nina'
+
+
 import Contactos from '@/views/contactos'
-import Nino2page from '@/views/nino2page'
 import Despachos from '@/views/despachos'
 import Login from '@/views/login'
+import Register from '@/views/register'
+import Menuser from '@/views/menuser'
+import Pedidos from '@/views/pedidos'
+import Direcciones from '@/views/direcciones'
+import Carrito from '@/views/Carrito'
 
 Vue.use(Router)
 
@@ -21,11 +32,26 @@ export default new Router({
       name: 'menu',
       component: Menu
     },
+
+
+
     {
       path: '/nino',
       name: 'nino',
-      component: Nino
+      component: Nino,
     },
+    {
+      path: '/camuflaje',
+      name: 'camuflaje',
+      component: Camuflaje
+    },
+    {
+      path: '/nube',
+      name: 'nube',
+      component: Nube
+    },
+
+
     {
       path: '/nina',
       name: 'nina',
@@ -37,11 +63,6 @@ export default new Router({
       component: Contactos
     },
     {
-      path: '/nino2page',
-      name: 'nino2page',
-      component: Nino2page
-    },
-    {
       path: '/despachos',
       name: 'despachos',
       component: Despachos
@@ -50,6 +71,31 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
+    },
+    {
+      path: '/menuser',
+      name: 'menuser',
+      component: Menuser
+    },
+    {
+      path: '/pedidos',
+      name: 'pedidos',
+      component: Pedidos
+    },
+    {
+      path: '/direcciones',
+      name: 'direcciones',
+      component: Direcciones
+    },
+    {
+      path: '/carrito',
+      name: 'carrito',
+      component: Carrito
     }
   ]
 })
